@@ -32,13 +32,13 @@ This project demonstrates how to build a production-ready AI assistant with a ve
 
 ```bash
 supportly/
-├── app/               # Core app logic (agent, retriever, tools)
+├── app
 │   ├── chatbot.py
 │   ├── retriever.py
 │   ├── tools/
 │   └── prompts/
-├── db/                # MongoDB setup and vector store
-├── data/              # FAQ and order data (CSV/JSON)
-├── config/            # API keys and environment config
+├── db
+├── data
+├── config
 ├── requirements.txt
 └── README.md
