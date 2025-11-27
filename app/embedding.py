@@ -4,7 +4,7 @@ from langchain_chroma.vectorstores import Chroma
 from config.settings import OPENAI_API_KEY, VECTORS_SAVE_PATH
 import os
 
-loader = CSVLoader(file_path='../data/raw_data/FAQs.csv')
+loader = CSVLoader(file_path='../data/cleaned_data/FAQs.csv')
 documents = loader.load()
 
 embedding = OpenAIEmbeddings(
