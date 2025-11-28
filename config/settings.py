@@ -13,4 +13,5 @@ ORDER_COLLECTION = "orders"
 EMBEDDING_MODEL = "text-embedding-3-small"
 LLM_MODEL = "gpt-5-nano-2025-08-07"
 
-VECTORS_SAVE_PATH = "../data/chroma_store"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+VECTORS_SAVE_PATH = os.path.join(BASE_DIR, "data", "chroma_store")
