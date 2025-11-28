@@ -1,10 +1,11 @@
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_community.document_loaders import CSVLoader
 from langchain_chroma.vectorstores import Chroma
-from config.settings import OPENAI_API_KEY, VECTORS_SAVE_PATH
+from config.settings import BASE_DIR, VECTORS_SAVE_PATH
 import os
 
-loader = CSVLoader(file_path='../data/cleaned_data/FAQs.csv')
+csv_file_path = os.path.join(BASE_DIR, 'data', 'cleaned_data', 'FAQs.csv')
+loader = CSVLoader(file_path=csv_file_path)
 documents = loader.load()
 
 embedding = OpenAIEmbeddings(
@@ -21,3 +22,5 @@ Chroma.from_documents(
     persist_directory=VECTORS_SAVE_PATH,
     collection_name="FAQs"
 )
+
+print(f'FAQs.csv file has been embedded and saved to: {VECTORS_SAVE_PATH}')
