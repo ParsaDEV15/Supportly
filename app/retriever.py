@@ -11,11 +11,17 @@ class Retriever:
             max_retries=5
         )
 
-        self.vector_store = Chroma(
+        vector_store = Chroma(
             embedding_function=embedding,
             persist_directory=VECTORS_SAVE_PATH,
             collection_name="FAQs"
         )
 
-    def get_retriever(self, query, k=3):
-        return self.vector_store.similarity_search(query, k=k)
+        self.retriever = vector_store.as_retriever(
+            search_type='mmr',
+            search_kwargs={'fetch_k': 7, 'k': 4}
+        )
+
+    def get_retriever(self, query):
+        docs = self.retriever.invoke(input=query)
+        return docs
