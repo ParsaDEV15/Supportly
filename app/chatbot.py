@@ -1,28 +1,40 @@
 from langchain_openai import ChatOpenAI
 from langchain_classic.agents import create_openai_tools_agent, AgentExecutor
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.tools import tool
+from tools.retriever_tool import faq_tool
 from config.settings import LLM_MODEL
 
 
 class ChatBot:
     def __init__(self):
-        chat_bot = ChatOpenAI(model=LLM_MODEL, temperature=0.1)
+        chat_bot = ChatOpenAI(model=LLM_MODEL)
 
-        system_prompt = open('prompts/system_prompt.txt', 'r').readline()
+        system_prompt = open('prompts/system_prompt.txt', 'r').read()
 
         prompt = ChatPromptTemplate.from_messages([
             ("system", system_prompt),
-            ("human", "{input}")
+            ("human", "{input}"),
+            ('placeholder', '{agent_scratchpad}')
         ])
 
-        self.chain = prompt | chat_bot
+        tools = [faq_tool]
+
+        agent = create_openai_tools_agent(
+            llm=chat_bot,
+            prompt=prompt,
+            tools=tools
+        )
+
+        self.executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
     def get_response(self, query):
-        return self.chain.invoke({'input': query}).content
+        return self.executor.invoke({'input': query})
 
 
 if __name__ == '__main__':
     chatbot = ChatBot()
-    response = chatbot.get_response(query='Hello')
-    print(response)
+
+    while True:
+        prompt = input('Write your prompt: ')
+        response: dict = chatbot.get_response(query=prompt)
+        print(response['output'])
