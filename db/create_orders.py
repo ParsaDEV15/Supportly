@@ -1,8 +1,7 @@
 from mongo_setup import MongoSetup
+from config.settings import ORDER_COLLECTION
 
 mongo_setup = MongoSetup()
-
-COLLECTION_NAME = 'orders'
 
 
 def create_order_info():
@@ -28,13 +27,13 @@ def create_order_info():
 
 def create_order(order_data: dict):
     mongo_setup.insert_one_document(
-        collection_name=COLLECTION_NAME,
+        collection_name=ORDER_COLLECTION,
         data=order_data
     )
 
 
 def get_orders_info():
-    docs = list(mongo_setup.find_all_docs(collection_name=COLLECTION_NAME, query={}))
+    docs = list(mongo_setup.find_all_docs(collection_name=ORDER_COLLECTION, query={}))
 
     if len(docs) != 0:
         for doc in docs:
