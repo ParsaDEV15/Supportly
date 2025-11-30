@@ -18,6 +18,18 @@ class MongoSetup:
         collection = self.db[collection_name]
         collection.insert_many(datas)
 
-    def find_document(self, collection_name, query):
+    def find_one_doc(self, collection_name, query):
         collection = self.db[collection_name]
         return collection.find_one(query)
+
+    def find_all_docs(self, collection_name, query):
+        collection = self.db[collection_name]
+        return collection.find(query)
+
+    def delete_one_doc(self, collection_name, query):
+        collection = self.db[collection_name]
+        collection.delete_one(query)
+
+    def delete_all_docs(self, collection_name, query):
+        collection = self.db[collection_name]
+        collection.delete_many(query)
