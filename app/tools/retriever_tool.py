@@ -4,7 +4,7 @@ from langchain_core.tools import Tool
 retriever = Retriever()
 
 
-def faq_retriever_func(query: str) -> str:
+def faq_retriever(query: str) -> str:
     docs = retriever.get_retriever(query)
 
     if not docs:
@@ -16,5 +16,5 @@ def faq_retriever_func(query: str) -> str:
 faq_tool = Tool(
     name='faqs_search',
     description='Use this tool to answer the general FAQs using documents.',
-    func=faq_retriever_func
+    func=faq_retriever
 )
