@@ -8,6 +8,7 @@ MONGODB_URI = os.getenv("MONGODB_URI")
 
 DB_NAME = "customer_bot"
 ORDER_COLLECTION = "orders"
+PRODUCT_COLLECTION = "products"
 
 EMBEDDING_MODEL = "text-embedding-3-small"
 LLM_MODEL = "gpt-5-nano-2025-08-07"
