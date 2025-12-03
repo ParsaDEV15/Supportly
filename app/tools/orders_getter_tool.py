@@ -15,7 +15,11 @@ def get_order_status(full_name: str) -> str:
         return "No order found"
 
     order_status = order_result['order_status']
-    return order_status
+    return f"""
+    Order Information:
+    - Customer: {full_name}
+    - Status: {order_status}
+    """
 
 
 get_order_status_tool = Tool(
