@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Silent Office Keyboard",
+        "description": "A low-profile, quiet keyboard designed for long typing sessions in office environments.",
+        "tags": ["keyboard", "office", "silent"],
+        "price": 49.99
+    },
+    {
+        "name": "Mechanical Keyboard Red Switch",
+        "description": "A mechanical keyboard with smooth red switches ideal for fast-paced gaming.",
+        "tags": ["keyboard", "gaming", "mechanical"],
+        "price": 89.99
+    },
+    {
+        "name": "Wireless Compact Keyboard",
+        "description": "A compact wireless keyboard with Bluetooth support for laptops and tablets.",
+        "tags": ["keyboard", "wireless", "portable"],
+        "price": 59.99
+    },
+    {
+        "name": "144Hz Gaming Monitor 27”",
+        "description": "A 27-inch full HD monitor with 144Hz refresh rate for smooth gaming performance.",
+        "tags": ["monitor", "gaming", "144hz"],
+        "price": 189.99
+    },
+    {
+        "name": "4K UHD Professional Monitor",
+        "description": "A stunning 4K display designed for graphic design and productivity.",
+        "tags": ["monitor", "4k", "professional"],
+        "price": 329.99
+    },
+    {
+        "name": "Curved Ultrawide Monitor 34”",
+        "description": "A 34-inch ultrawide curved monitor ideal for multitasking and immersive viewing.",
+        "tags": ["monitor", "ultrawide", "curved"],
+        "price": 399.99
+    },
+    {
+        "name": "Wireless ANC Headset",
+        "description": "A wireless headset with active noise cancellation for focused work.",
+        "tags": ["headset", "wireless", "anc", "office"],
+        "price": 119.99
+    },
+    {
+        "name": "Gaming Headset 7.1",
+        "description": "A surround-sound gaming headset with a noise-cancelling microphone.",
+        "tags": ["headset", "gaming", "surround"],
+        "price": 79.99
+    },
+    {
+        "name": "Lightweight Office Headset",
+        "description": "A comfortable wired headset designed for long meetings and calls.",
+        "tags": ["headset", "office", "wired"],
+        "price": 39.99
+    },
+    {
+        "name": "USB-C Multiport Hub",
+        "description": "A compact USB-C hub offering HDMI, USB-A, SD card, and charging ports.",
+        "tags": ["accessory", "usb-c", "hub"],
+        "price": 34.99
+    },
+    {
+        "name": "Extended RGB Mouse Pad",
+        "description": "A large desk mat with customizable RGB lighting for gaming setups.",
+        "tags": ["accessory", "mousepad", "gaming"],
+        "price": 29.99
+    },
+    {
+        "name": "Laptop Stand Adjustable",
+        "description": "A sturdy adjustable laptop stand that improves posture and airflow.",
+        "tags": ["accessory", "laptop", "ergonomic"],
+        "price": 27.99
+    },
+    {
+        "name": "USB Condenser Microphone",
+        "description": "A high-quality USB microphone perfect for meetings, streaming, or podcasting.",
+        "tags": ["microphone", "usb", "office", "streaming"],
+        "price": 69.99
+    },
+    {
+        "name": "Noise-Cancelling Desktop Microphone",
+        "description": "A compact microphone that filters background noise for clearer calls.",
+        "tags": ["microphone", "noise-cancelling", "office"],
+        "price": 49.99
+    },
+    {
+        "name": "Professional XLR Microphone",
+        "description": "A broadcast-quality XLR microphone ideal for advanced audio setups.",
+        "tags": ["microphone", "xlr", "professional"],
+        "price": 129.99
+    },
+    {
+        "name": "Smart Desk Lamp",
+        "description": "A dimmable LED lamp with adjustable color temperature and USB charging.",
+        "tags": ["lamp", "desk", "smart", "office"],
+        "price": 39.99
+    },
+    {
+        "name": "Bluetooth Desktop Speaker",
+        "description": "A sleek Bluetooth speaker designed for clear audio and modern work setups.",
+        "tags": ["speaker", "bluetooth", "office"],
+        "price": 54.99
+    }
+]
