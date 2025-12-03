@@ -1,10 +1,9 @@
 from app.retriever import Retriever
 from langchain_core.tools import Tool
 
-retriever = Retriever()
-
 
 def faq_retriever(query: str) -> str:
+    retriever = Retriever()
     docs = retriever.get_retriever(query)
 
     if not docs:
