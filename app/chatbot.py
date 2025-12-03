@@ -2,6 +2,7 @@ from langchain_openai import ChatOpenAI
 from langchain_classic.agents import create_openai_tools_agent, AgentExecutor
 from langchain_core.prompts import ChatPromptTemplate
 from tools.retriever_tool import faq_tool
+from tools.orders_getter_tool import get_order_status_tool
 from config.settings import LLM_MODEL
 
 
@@ -17,7 +18,7 @@ class ChatBot:
             ('placeholder', '{agent_scratchpad}')
         ])
 
-        tools = [faq_tool]
+        tools = [faq_tool, get_order_status_tool]
 
         agent = create_openai_tools_agent(
             llm=chat_bot,
