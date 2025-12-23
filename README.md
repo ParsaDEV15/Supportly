@@ -13,18 +13,17 @@ This project demonstrates how to build a production-ready AI assistant with a ve
 - 📦 Order status lookup via MongoDB backend
 - 💡 Product recommendation support (static or future ML-based)
 - 🔧 Modular and extensible with LangChain tools
-- ☁️ Ready for cloud deployment (OpenAI, MongoDB Atlas)
 
 ---
 
 ## 🧱 Tech Stack
 
 - **LangChain** – LLM orchestration and agent framework
-- **OpenAI GPT-4 / GPT-3.5** – Language model backend
-- **MongoDB** – Stores order data and FAQ documents
-- **MongoDB Vector Search or Chroma** – Vector embeddings for RAG
-- **Streamlit or FastAPI** – Frontend / interface layer
-- **Python 3.10+**
+- **OpenAI GPT-5-nano-2025-08-07** – Language model backend
+- **Chroma** – Stores FAQ documents
+- **MongoDB** - Stores orders and supplies data
+- **Streamlit** – Frontend
+- **Python 3.12+**
 
 ---
 
@@ -33,12 +32,20 @@ This project demonstrates how to build a production-ready AI assistant with a ve
 ```bash
 supportly/
 ├── app
-│   ├── chatbot.py
-│   ├── retriever.py
+│   ├── prompts/
 │   ├── tools/
-│   └── prompts/
-├── db
-├── data
+│   ├── chatbot.py
+│   ├── embedding.py
+│   └── retriever.py
+│
 ├── config
+├── └── settings.py
+├── data
+├── └── data_pipeline.py
+├── db
+│   ├── add_products.py
+│   ├── create_orders.py
+│   ├── mongo_setup.py
+│   └── products.json
 ├── requirements.txt
 └── README.md
